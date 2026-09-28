@@ -14,7 +14,7 @@ const features = [
   },
   {
     title: "Wearable Sensor Fusion",
-    text: "Head orientation and IMU motion drive parallax, artificial horizon behavior, and the apparent depth of the cockpit.",
+    text: "A glasses-frame orientation model, wrap-safe smoothing, manual recentering, and depth-separated parallax keep the cockpit stable while the surrounding flight space responds to head movement.",
   },
   {
     title: "Calibration Lab",
@@ -280,6 +280,19 @@ const compatibility = [
       .button.secondary:hover {
         background: var(--accent-soft);
         border-color: rgba(125,255,178,0.45);
+      }
+
+      .button.disabled {
+        cursor: default;
+        color: var(--muted);
+        background: rgba(255,255,255,0.015);
+        border-color: var(--line);
+      }
+
+      .button.disabled:hover {
+        transform: none;
+        background: rgba(255,255,255,0.015);
+        border-color: var(--line);
       }
 
       .instrument-panel {
@@ -763,22 +776,8 @@ const compatibility = [
             </p>
 
             <div class="actions">
-              <a
-                class="button primary"
-                href="https://github.com/ridderek/Apsis-Warp/releases/download/v0.4.5-community-preview/Apsis-Warp-Lab-v0.4.5-Community-Preview.apk"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Download Community Preview
-              </a>
-
-              <a
-                class="button secondary"
-                href="https://github.com/ridderek/Apsis-Warp/releases/tag/v0.4.5-community-preview"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Release Notes
+              <a class="button primary" href="#release">
+                View Preview Status
               </a>
             </div>
           </div>
@@ -865,14 +864,14 @@ const compatibility = [
               </div>
 
               <h3>
-                Experimental, but real.
+                v0.4.6 validated on-device.
               </h3>
 
               <p>
-                Warp Lab is actively tested on physical Rokid waveguide
-                hardware. Some behavior remains experimental by design, and
-                real-world hardware testing continues to shape localization,
-                display behavior, and long-wear comfort.
+                The current flight model has completed physical Rokid testing.
+                Corrected attitude mapping, a stronger artificial horizon,
+                manual recentering, and depth-separated parallax now join the
+                established spatial-audio and Sonic Constellations systems.
               </p>
             </div>
           </div>
@@ -898,47 +897,26 @@ const compatibility = [
           </div>
         </section>
 
-        <section>
+        <section id="release">
           <div class="section-label">
             Release
           </div>
 
           <h2>
-            Community Preview.
+            Cleared for Community Preview.
           </h2>
 
           <p class="copy">
-            Apsis Warp Lab v0.4.5 is now available as a signed Community Preview
-            build for compatible Rokid waveguide hardware. Download the APK
-            directly, review the release notes, or share feedback through GitHub.
+            Apsis Warp Lab v0.4.6 has completed on-glasses validation and is
+            entering final public packaging. The release APK will be signed,
+            checksum-verified, and published separately from the private
+            engineering source before the download opens.
           </p>
 
           <div class="release-actions">
-            <a
-              class="button primary"
-              href="https://github.com/ridderek/Apsis-Warp/releases/download/v0.4.5-community-preview/Apsis-Warp-Lab-v0.4.5-Community-Preview.apk"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Download v0.4.5
-            </a>
-
-            <a
-              class="button secondary"
-              href="https://github.com/ridderek/Apsis-Warp/releases/tag/v0.4.5-community-preview"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Release Notes
-            </a>
-            <a
-              class="button secondary"
-              href="https://github.com/ridderek/Apsis-Warp/issues"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Share Feedback
-            </a>
+            <span class="button disabled" aria-disabled="true">
+              v0.4.6 Package In Final Signing
+            </span>
           </div>
         </section>
       </main>
